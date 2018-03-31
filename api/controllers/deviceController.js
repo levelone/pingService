@@ -211,7 +211,7 @@ exports.read_device_with_dates = function(req, res) {
   }, function(err, device) {
     if (err)
       res.send(err);
-    res.send(device);
+    res.json(device);
   });
 }
 
