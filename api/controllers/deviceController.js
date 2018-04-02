@@ -33,11 +33,11 @@ exports.list_devices = function(req, res) {
         }
       }
     }
-  }], function(err, device) {
+  }], function(err, devices) {
     if (err)
       res.send(err);
-    result = Object.assign({}, device[0], device[1])
-    res.json(device);
+    result = Object.assign({}, ...devices);
+    res.json(result);
   });
 }
 
@@ -70,10 +70,10 @@ exports.list_devices_with_date = function(req, res) {
         }
       }
     }
-  }], function(err, device) {
+  }], function(err, devices) {
     if (err)
       res.send(err);
-    result = Object.assign({}, device[0], device[1])
+    result = Object.assign({}, ...devices);
     res.json(result);
   });
 }
@@ -107,10 +107,10 @@ exports.list_devices_with_dates = function(req, res) {
         }
       }
     }
-  }], function(err, device) {
+  }], function(err, devices) {
     if (err)
       res.send(err);
-    result = Object.assign({}, device[0], device[1])
+    result = Object.assign({}, ...devices);
     res.json(result);
   });
 }
